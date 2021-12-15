@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<h1>Clinic Management System</h1>
+<form
+        id="login"
+        @submit="checkForm"
+        action=""
+        method="post"
+>
+<p>
+    <label for="userid">UserID</label>
+    <input
+            id="userid"
+            v-model="userid"
+            type="text"
+            name="userid"
+    >
+</p>
+
+<p>
+    <label for="password">Password</label>
+    <input
+            id="password"
+            v-model="password"
+            type="text"
+            name="password"
+    >
+</p>
+    <p>
+        <input
+                type="submit"
+                value="Submit"
+        >
+    </p>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<script>
+
+    const login = new Vue({
+        el: '#login',
+        data: {
+            errors: [],
+            userid: null,
+            password: null,
+        },
+        methods:{
+            checkForm: function (e) {
+                if (this.userid && this.password) {
+                    return true;
+                }
+
+                this.errors = [];
+
+                if (!this.userid) {
+                    this.errors.push('UserID required.');
+                }
+                if (!this.password) {
+                    this.errors.push('Password required.');
+                }
+                e.preventDefault();
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
