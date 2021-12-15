@@ -6,7 +6,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-@WebServlet("/login")
+@WebServlet("/Servlet_login")
 public class Servlet_login extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private loginDao loginDao;
