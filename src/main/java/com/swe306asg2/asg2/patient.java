@@ -1,4 +1,4 @@
-package com.swe306.asg2;
+package com.swe306asg2.asg2;
 
 public class patient {
     //getter and setters

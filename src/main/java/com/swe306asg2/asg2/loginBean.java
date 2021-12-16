@@ -1,4 +1,4 @@
-package com.swe306.asg2;
+package com.swe306asg2.asg2;
 import java.io.Serializable;
 
 public class loginBean implements Serializable {
