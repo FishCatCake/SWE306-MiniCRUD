@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet("/Servlet_login")
+@WebServlet("/login")
 public class Servlet_login extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private com.swe306asg2.login.database.loginDao loginDao;
@@ -32,13 +32,13 @@ public class Servlet_login extends HttpServlet {
 
         try {
             if (loginDao.validate(loginBean)) {
-                //HttpSession session = request.getSession();
-                // session.setAttribute("username",username);
-                response.sendRedirect("loginsuccess.jsp");
+                HttpSession session = request.getSession();
+                session.setAttribute("username",username);
+                response.sendRedirect("?");//patient list
             } else {
                 HttpSession session = request.getSession();
-                //session.setAttribute("user", username);
-                //response.sendRedirect("login.jsp");
+                session.setAttribute("user", username);
+                response.sendRedirect("login.jsp");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -46,17 +46,3 @@ public class Servlet_login extends HttpServlet {
     }
 }
 
-/*
-@WebServlet(name = "Servlet_login", value = "/Servlet_login")
-public class Servlet_login extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-}
-*/

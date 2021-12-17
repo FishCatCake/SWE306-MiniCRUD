@@ -5,14 +5,14 @@
   Time: 8:18 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page  contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Login Validation</title>
 </head>
 <body>
-<div align="center">
-    <h1>Employee Login Form</h1>
+<div style="align-content: center">
+    <h1>Clinic Management System</h1>
     <form action="<%=request.getContextPath()%>/login" method="post">
         <table style="with: 100%">
             <tr>
@@ -23,11 +23,11 @@
                 <td>Password</td>
                 <td><input type="password" name="password" /></td>
             </tr>
-
         </table>
         <input type="submit" value="Submit" />
     </form>
 </div>
+
 
 
 </body>
