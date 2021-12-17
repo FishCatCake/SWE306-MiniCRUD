@@ -8,11 +8,11 @@ import java.util.List;
 
 public class Patient {
     private int id;
-    private String fullname, icNumber, telNo, address;
+    private String fullName, icNumber, telNo, address;
 
-    public Patient(int id, String fullname, String icNumber, String telNo, String address) {
+    public Patient(int id, String fullName, String icNumber, String telNo, String address) {
         this.id = id;
-        this.fullname = fullname;
+        this.fullName = fullName;
         this.icNumber = icNumber;
         this.telNo = telNo;
         this.address = address;
@@ -27,12 +27,12 @@ public class Patient {
         this.id = id;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getIcNumber() {
@@ -65,7 +65,7 @@ public class Patient {
         return dao.getPatientDAO();
     }
 
-    public static List<Patient> all() throws SQLException{
+    public static List<Patient> all() throws SQLException {
         return patientDAO().all();
     }
 

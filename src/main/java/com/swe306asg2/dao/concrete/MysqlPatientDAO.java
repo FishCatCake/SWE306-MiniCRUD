@@ -15,7 +15,7 @@ import java.util.List;
 // implementation of PatientDAO to Mysql methods
 public class MysqlPatientDAO implements PatientDAO {
     // prepared statements for SQL query
-    private static final String ALL = "SELECT * FROM patient";
+    private static final String ALL = "SELECT * FROM patients";
 
     @Override
     public Patient insert(Patient Object) throws SQLException {

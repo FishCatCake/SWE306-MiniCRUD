@@ -13,8 +13,9 @@ public class Mysql extends DAOFactory {
     private static String user = "root";
     private static String password = "password";
     private static String driver = "com.mysql.jdbc.Driver";
+    private static String postfix = "?useSSL=false";
 
-    private static String connectionUrl = baseUrl + database;
+    private static String connectionUrl = baseUrl + database + postfix;
 
     public Connection openCon() {
         try {
