@@ -1,6 +1,8 @@
-package com.swe306asg2.asg2;
+package com.swe306asg2.login.web;
 
 
+import com.swe306asg2.login.bean.loginBean;
+import com.swe306asg2.login.database.loginDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,7 +15,7 @@ import java.io.IOException;
 @WebServlet("/Servlet_login")
 public class Servlet_login extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private com.swe306asg2.asg2.loginDao loginDao;
+    private com.swe306asg2.login.database.loginDao loginDao;
 
     public void init() {
         loginDao = new loginDao();
