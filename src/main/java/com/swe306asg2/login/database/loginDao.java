@@ -1,4 +1,6 @@
-package com.swe306asg2.asg2;
+package com.swe306asg2.login.database;
+
+import com.swe306asg2.login.bean.loginBean;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,9 +13,9 @@ public class loginDao {
         boolean status = false;
 
         Class.forName("com.mysql.jdbc.Driver");
-        String url ="jdbc:mysql://localhost:3306/mysql_database?useSSL=false";
+        String url ="jdbc:mysql://localhost:3306/admin?useSSL=false";
         String uname="root";
-        String password="LiuYicen592";
+        String password="password";
         String query="select * from admin where username = ? and password = ?";
 
         try (Connection connection = DriverManager
