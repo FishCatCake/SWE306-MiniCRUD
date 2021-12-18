@@ -18,16 +18,29 @@
             margin-left: auto;
             margin-right: auto;
             border-spacing: 1em;
+
         }
         td {
-            width: 700px;
+            width: 600px;
             text-align: left;
             padding: 5px;
+
         }
         select {
             color: #0066ff;
             background: rgba(255, 221, 0, 0.73);
             border: 10px;
+            font-size: medium;
+            width: 150px;
+            margin: 10px;
+
+        }
+        select:focus {
+            min-width: 150px;
+            width: auto;
+        }
+        b {
+            font-size: large;
         }
     </style>
 </head>
@@ -39,7 +52,7 @@
         <table>
             <tr>
                 <td>
-                    1. Choice of your swab test for COVID-19:<br>
+                    <b>1. Choice of your swab test for COVID-19:</b><br>
                     <select name="test">
                         <option value="a">Antigen Rapid Test Kit (RTK)</option>
                         <option value="b">Polymerase Chain Reaction Test (PCR)</option>
@@ -48,7 +61,7 @@
             </tr>
             <tr>
                 <td>
-                    2. Are you vaccinated?<br>
+                    <b>2. Are you vaccinated?</b><br>
                     <select name="vaccine">
                         <option value="a">Fully Vaccinated</option>
                         <option value="b">Partially Vaccinated</option>
@@ -58,7 +71,7 @@
             </tr>
             <tr>
                 <td>
-                    3. Are you exhibiting two or more symptoms as listed:<br>
+                    <b>3. Are you exhibiting two or more symptoms as listed:</b><br>
                     <select name="symptom" multiple>
                         <option value="a">Fever</option>
                         <option value="b">Cough</option>
@@ -71,7 +84,7 @@
             </tr>
             <tr>
                 <td>
-                    4. Have you attended any areas associated with known COVID-19 clusters:<br>
+                    <b>4. Have you attended any areas associated with known COVID-19 clusters:</b><br>
                     <select name="attend">
                         <option value="a">Yes</option>
                         <option value="b">No</option>
@@ -81,7 +94,7 @@
 
             <tr>
                 <td>
-                    5. Do you have any close contact to confirmed or suspected case of COVID-19 case within 14 days?<br>
+                    <b>5. Do you have any close contact to confirmed or suspected case of COVID-19 case within 14 days?</b><br>
                     <select name="closeContact">
                         <option value="a">Yes</option>
                         <option value="b">No</option>
