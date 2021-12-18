@@ -35,7 +35,7 @@
     <header style="text-align: center"><h1>COVID-19 Questionnaire</h1></header>
 
     <div>
-    <form action="?" name="question" method="post">
+    <form action="addQuestionnaire.jsp?" name="question" method="post">
         <table>
             <tr>
                 <td>
