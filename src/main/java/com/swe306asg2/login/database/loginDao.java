@@ -2,21 +2,18 @@ package com.swe306asg2.login.database;
 
 import com.swe306asg2.login.bean.loginBean;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class loginDao {
     public boolean validate(loginBean loginBean) throws ClassNotFoundException {
         boolean status = false;
 
-        Class.forName("com.mysql.jdbc.Driver");
-        String url ="jdbc:mysql://localhost:3306/admin?useSSL=false";
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url ="jdbc:mysql://localhost:3306/Clinic?useSSL=false";
         String uname="root";
-        String password="password";
-        String query="select * from admin where username = ? and password = ?";
+        String password="LiuYicen592";
+        String query;
+        query = "select * from admin where username = ? and password = ?";
 
         try (Connection connection = DriverManager
                 .getConnection(url, uname, password);

@@ -9,12 +9,22 @@
 <html>
 <head>
     <title>Login Validation</title>
+    <style>
+        div {
+            border: 5px solid rgba(0, 81, 255, 0.68);
+            text-align: center;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-<div style="align-content: center">
+<div>
     <h1>Clinic Management System</h1>
     <form action="<%=request.getContextPath()%>/login" method="post">
-        <table style="with: 100%">
+        <table>
             <tr>
                 <td>UserName</td>
                 <td><input type="text" name="username" /></td>
