@@ -3,6 +3,7 @@ package com.swe306asg2.login.web;
 
 import com.swe306asg2.login.bean.loginBean;
 import com.swe306asg2.login.database.loginDao;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,7 +16,7 @@ import java.io.IOException;
 @WebServlet("/login")
 public class Servlet_login extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private com.swe306asg2.login.database.loginDao loginDao;
+    private loginDao loginDao;
 
     public void init() {
         loginDao = new loginDao();
@@ -36,9 +37,9 @@ public class Servlet_login extends HttpServlet {
                 session.setAttribute("username",username);
                 response.sendRedirect("?");//patient list
             } else {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", username);
-                response.sendRedirect("login.jsp");
+               /* HttpSession session = request.getSession();
+                session.setAttribute("user", username);*/
+                response.sendRedirect("loginFailed.jsp");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
