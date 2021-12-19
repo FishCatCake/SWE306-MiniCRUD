@@ -12,7 +12,7 @@ public class Mysql extends DAOFactory {
     private static String database = "asg2";
     private static String user = "root";
     private static String password = "password";
-    private static String driver = "com.mysql.jdbc.Driver";
+    private static String driver = "com.mysql.cj.jdbc.Driver";
     private static String postfix = "?useSSL=false";
 
     private static String connectionUrl = baseUrl + database + postfix;
@@ -21,6 +21,7 @@ public class Mysql extends DAOFactory {
         try {
             Class.forName(driver);
             Connection con = DriverManager.getConnection(connectionUrl, user, password);
+            System.out.println("Connected to database");
             return con;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
