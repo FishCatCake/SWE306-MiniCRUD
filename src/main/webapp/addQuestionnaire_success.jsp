@@ -8,10 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-    //connection with database operations
+    <title>Questionnaire saved</title>
+    <style>
+        p {
+            color: green;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
+<p>Record saved.</p>
+<jsp:include page="questionnaire.jsp"/>
 </body>
 </html>
