@@ -48,7 +48,7 @@
     <header style="text-align: center"><h1>COVID-19 Questionnaire</h1></header>
 
     <div>
-    <form action="addQuestionnaire.jsp?" name="question" method="post">
+    <form onsubmit="return validate();"action="?"  method="post">
         <table>
             <tr>
                 <td>
@@ -85,7 +85,7 @@
             <tr>
                 <td>
                     <b>4. Have you attended any areas associated with known COVID-19 clusters:</b><br>
-                    <select name="attend">
+                    <select name="cluster">
                         <option value="a">Yes</option>
                         <option value="b">No</option>
                     </select>
