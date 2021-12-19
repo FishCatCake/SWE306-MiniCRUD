@@ -11,7 +11,7 @@ public class loginDao {
         Class.forName("com.mysql.cj.jdbc.Driver");
         String url ="jdbc:mysql://localhost:3306/Clinic?useSSL=false";
         String uname="root";
-        String password="LiuYicen592";
+        String password="password";
         String query;
         query = "select * from admin where username = ? and password = ?";
 
