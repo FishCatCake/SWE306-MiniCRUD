@@ -12,9 +12,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/login")
-public class Servlet_login extends HttpServlet {
+public class ServletLogin extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private loginDao loginDao;
 
@@ -34,16 +35,21 @@ public class Servlet_login extends HttpServlet {
         try {
             if (loginDao.validate(loginBean)) {
                 HttpSession session = request.getSession();
-                session.setAttribute("username",username);
+                session.setAttribute("username", username);
                 response.sendRedirect("?");//patient list
             } else {
                /* HttpSession session = request.getSession();
                 session.setAttribute("user", username);*/
-                response.sendRedirect("loginFailed.jsp");
+                response.sendRedirect("error.jsp");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        out.println("<h1>Hello World</h1>");
     }
 }
 

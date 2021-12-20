@@ -39,16 +39,13 @@ public class MysqlQuestionnaireDAO implements QuestionnaireDAO {
     }
 
     private Questionnaire createQuestionnaire(ResultSet rset) throws SQLException {
-        Questionnaire questionnaire = new Questionnaire(
-                // get columns from database
-                rset.getInt("id"),
-                rset.getString("ic_number"),
-                rset.getString("q1"),
-                rset.getString("q2"),
-                rset.getString("q3"),
-                rset.getString("q4"),
-                rset.getString("q5")
-        );
+        Questionnaire questionnaire = new Questionnaire();
+        // get columns from database
+        questionnaire.setQ1(rset.getString("q1"));
+        questionnaire.setQ2(rset.getString("q2"));
+        questionnaire.setQ3(rset.getString("q3"));
+        questionnaire.setQ4(rset.getString("q4"));
+        questionnaire.setQ5(rset.getString("q5"));
         return questionnaire;
     }
 

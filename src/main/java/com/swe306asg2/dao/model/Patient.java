@@ -3,12 +3,19 @@ package com.swe306asg2.dao.model;
 import com.swe306asg2.dao.factory.DAOFactory;
 import com.swe306asg2.dao.interfaces.PatientDAO;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 
 public class Patient {
     private int id;
-    private String fullName, icNumber, telNo, address, gender, prescription, lastVisitDate;
+    private String fullName;
+    private String icNumber;
+    private String telNo;
+    private String address;
+    private String gender;
+    private String prescription;
+    private Date lastVisitDate;
 
     public String getGender() {
         return gender;
@@ -26,11 +33,11 @@ public class Patient {
         this.prescription = prescription;
     }
 
-    public String getLastVisitDate() {
+    public Date getLastVisitDate() {
         return lastVisitDate;
     }
 
-    public void setLastVisitDate(String lastVisitDate) {
+    public void setLastVisitDate(Date lastVisitDate) {
         this.lastVisitDate = lastVisitDate;
     }
 //    public Patient(int id, String fullName, String icNumber, String telNo, String address) {

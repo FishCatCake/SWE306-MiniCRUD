@@ -24,7 +24,7 @@
 <body>
 <div>
     <h1>Clinic Management System</h1>
-    <form action="<%=request.getContextPath()%>/doLogin.jsp" method="post">
+    <form action="<%=request.getContextPath()%>/login" method="post">
         <table>
             <tr>
                 <td>Username</td>

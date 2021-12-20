@@ -55,14 +55,13 @@ public class MysqlPatientDAO implements PatientDAO {
     }
 
     private Patient createPatient(ResultSet rset) throws SQLException {
-        Patient patient = new Patient(
-                // get columns from database
-                rset.getInt("id"),
-                rset.getString("full_name"),
-                rset.getString("ic_number"),
-                rset.getString("tel_no"),
-                rset.getString("address")
-        );
+        Patient patient = new Patient();
+        patient.setIcNumber(rset.getString("ic_number"));
+        patient.setFullName(rset.getString("full_name"));
+        patient.setAddress(rset.getString("address"));
+        patient.setLastVisitDate(rset.getDate("last_visit_date"));
+        patient.setTelNo(rset.getString("tel_no"));
+
         return patient;
     }
 }
