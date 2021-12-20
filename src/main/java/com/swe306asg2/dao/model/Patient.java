@@ -8,15 +8,38 @@ import java.util.List;
 
 public class Patient {
     private int id;
-    private String fullName, icNumber, telNo, address;
+    private String fullName, icNumber, telNo, address, gender, prescription, lastVisitDate;
 
-    public Patient(int id, String fullName, String icNumber, String telNo, String address) {
-        this.id = id;
-        this.fullName = fullName;
-        this.icNumber = icNumber;
-        this.telNo = telNo;
-        this.address = address;
+    public String getGender() {
+        return gender;
     }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getPrescription() {
+        return prescription;
+    }
+
+    public void setPrescription(String prescription) {
+        this.prescription = prescription;
+    }
+
+    public String getLastVisitDate() {
+        return lastVisitDate;
+    }
+
+    public void setLastVisitDate(String lastVisitDate) {
+        this.lastVisitDate = lastVisitDate;
+    }
+//    public Patient(int id, String fullName, String icNumber, String telNo, String address) {
+//        this.id = id;
+//        this.fullName = fullName;
+//        this.icNumber = icNumber;
+//        this.telNo = telNo;
+//        this.address = address;
+//    }
 
 
     public int getId() {

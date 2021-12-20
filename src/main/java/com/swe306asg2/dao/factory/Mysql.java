@@ -1,7 +1,11 @@
 package com.swe306asg2.dao.factory;
 
+import com.swe306asg2.dao.concrete.MysqlAdminDAO;
 import com.swe306asg2.dao.concrete.MysqlPatientDAO;
+import com.swe306asg2.dao.concrete.MysqlQuestionnaireDAO;
+import com.swe306asg2.dao.interfaces.AdminDAO;
 import com.swe306asg2.dao.interfaces.PatientDAO;
+import com.swe306asg2.dao.interfaces.QuestionnaireDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -34,5 +38,15 @@ public class Mysql extends DAOFactory {
     @Override
     public PatientDAO getPatientDAO() {
         return new MysqlPatientDAO();
+    }
+
+    @Override
+    public QuestionnaireDAO getQuestionnaireDAO() {
+        return new MysqlQuestionnaireDAO();
+    }
+
+    @Override
+    public AdminDAO getAdminDAO() {
+        return new MysqlAdminDAO();
     }
 }
