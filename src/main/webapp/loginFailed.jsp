@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="com.swe306asg2.login.database.*" %>
 <html>
 <head>
     <meta charset="ISO-8859-1">

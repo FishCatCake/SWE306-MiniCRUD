@@ -17,7 +17,7 @@ public class MysqlAdminDAO implements AdminDAO {
     private static final String SQL_SELECT_ALL_ADMINS = "SELECT * FROM admin";
 
     // useless
-    public ResultSet insert(String username, String password) throws SQLException {
+    /*public ResultSet insert(String username, String password) throws SQLException {
         Connection c = DAOFactory.getDatabase().openCon();
         PreparedStatement pstmt = c.prepareStatement(SQL_INSERT_ADMIN);
         pstmt.setString(1, username);
@@ -28,7 +28,7 @@ public class MysqlAdminDAO implements AdminDAO {
         c.close();
         return status;
     }
-
+*/
     public static Admin select(String username) throws SQLException {
         Connection c = DAOFactory.getDatabase().openCon();
         PreparedStatement pstmt = c.prepareStatement(SQL_SELECT_ADMIN);
