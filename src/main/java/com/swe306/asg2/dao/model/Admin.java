@@ -1,7 +1,7 @@
-package com.swe306asg2.dao.model;
+package com.swe306.asg2.dao.model;
 
-import com.swe306asg2.dao.factory.DAOFactory;
-import com.swe306asg2.dao.interfaces.AdminDAO;
+import com.swe306.asg2.dao.factory.DAOFactory;
+import com.swe306.asg2.dao.interfaces.AdminDAO;
 
 import java.sql.SQLException;
 

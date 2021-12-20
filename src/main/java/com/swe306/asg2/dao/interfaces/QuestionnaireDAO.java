@@ -1,6 +1,6 @@
-package com.swe306asg2.dao.interfaces;
+package com.swe306.asg2.dao.interfaces;
 
-import com.swe306asg2.dao.model.Questionnaire;
+import com.swe306.asg2.dao.model.Questionnaire;
 
 import java.sql.SQLException;
 import java.util.List;

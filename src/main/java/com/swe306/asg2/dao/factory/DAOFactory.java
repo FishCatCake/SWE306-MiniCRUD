@@ -1,9 +1,8 @@
-package com.swe306asg2.dao.factory;
+package com.swe306.asg2.dao.factory;
 
-import com.swe306asg2.dao.interfaces.AdminDAO;
-import com.swe306asg2.dao.interfaces.PatientDAO;
-import com.swe306asg2.dao.interfaces.QuestionnaireDAO;
-import com.swe306asg2.dao.model.Questionnaire;
+import com.swe306.asg2.dao.interfaces.AdminDAO;
+import com.swe306.asg2.dao.interfaces.QuestionnaireDAO;
+import com.swe306.asg2.dao.interfaces.PatientDAO;
 
 import java.sql.Connection;
 

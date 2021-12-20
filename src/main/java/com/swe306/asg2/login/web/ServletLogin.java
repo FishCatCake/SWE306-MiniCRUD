@@ -1,9 +1,8 @@
-package com.swe306asg2.login.web;
+package com.swe306.asg2.login.web;
 
 
-import com.swe306asg2.login.bean.loginBean;
-import com.swe306asg2.login.database.loginDao;
-
+import com.swe306.asg2.login.bean.loginBean;
+import com.swe306.asg2.login.database.loginDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -36,7 +35,7 @@ public class ServletLogin extends HttpServlet {
             if (loginDao.validate(loginBean)) {
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
-                response.sendRedirect("?");//patient list
+                response.sendRedirect("patients.jsp");//patient list
             } else {
                /* HttpSession session = request.getSession();
                 session.setAttribute("user", username);*/

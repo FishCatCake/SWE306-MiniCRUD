@@ -1,7 +1,7 @@
-<%@ page import="com.swe306asg2.dao.model.Patient" %>
-<%@ page import="com.swe306asg2.dao.concrete.MysqlPatientDAO" %>
+<%@ page import="com.swe306.asg2.dao.model.Patient" %>
+<%@ page import="com.swe306.asg2.dao.concrete.MysqlPatientDAO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.swe306asg2.dao.interfaces.PatientDAO" %>
+<%@ page import="com.swe306.asg2.dao.interfaces.PatientDAO" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>

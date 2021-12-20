@@ -1,8 +1,8 @@
-package com.swe306asg2.dao.concrete;
+package com.swe306.asg2.dao.concrete;
 
-import com.swe306asg2.dao.factory.DAOFactory;
-import com.swe306asg2.dao.interfaces.AdminDAO;
-import com.swe306asg2.dao.model.Admin;
+import com.swe306.asg2.dao.factory.DAOFactory;
+import com.swe306.asg2.dao.interfaces.AdminDAO;
+import com.swe306.asg2.dao.model.Admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

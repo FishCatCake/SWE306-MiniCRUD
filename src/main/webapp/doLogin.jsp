@@ -11,15 +11,24 @@
     <title>Login Validation</title>
 </head>
 <body>
-<%@page import="com.swe306asg2.dao.concrete.MysqlAdminDAO, com.swe306asg2.dao.model.Admin, java.util.*" %>
-<%@ page import="com.swe306asg2.dao.interfaces.AdminDAO" %>
-<jsp:useBean id="u" class="com.swe306asg2.dao.model.Admin"></jsp:useBean>
+<%@page import="com.swe306.asg2.dao.concrete.MysqlAdminDAO, com.swe306.asg2.dao.model.Admin, java.util.*" %>
+<%@ page import="com.swe306.asg2.dao.interfaces.AdminDAO" %>
+<jsp:useBean id="u" class="com.swe306.asg2.dao.model.Admin"></jsp:useBean>
 <jsp:setProperty property="*" name="u"/>
 
 <%
     Admin admin = MysqlAdminDAO.select(u.getUsername());
+//    System.out.println(u.getUsername());
+//    System.out.println(u.getPassword());
+//    System.out.println(admin.getUsername());
+//    System.out.println(admin.getPassword());
     String password = u.getPassword();
-    if (password == admin.getPassword()) {
+    if (u.getUsername() == null && u.getPassword() == null) {
+        response.sendRedirect("/error.jsp");
+        return;
+    }
+
+    if (password.equals(admin.getPassword())) {
         response.sendRedirect("/patients.jsp");
     } else {
         response.sendRedirect("/error.jsp");

@@ -1,11 +1,11 @@
-package com.swe306asg2.dao.factory;
+package com.swe306.asg2.dao.factory;
 
-import com.swe306asg2.dao.concrete.MysqlAdminDAO;
-import com.swe306asg2.dao.concrete.MysqlPatientDAO;
-import com.swe306asg2.dao.concrete.MysqlQuestionnaireDAO;
-import com.swe306asg2.dao.interfaces.AdminDAO;
-import com.swe306asg2.dao.interfaces.PatientDAO;
-import com.swe306asg2.dao.interfaces.QuestionnaireDAO;
+import com.swe306.asg2.dao.concrete.MysqlAdminDAO;
+import com.swe306.asg2.dao.concrete.MysqlPatientDAO;
+import com.swe306.asg2.dao.concrete.MysqlQuestionnaireDAO;
+import com.swe306.asg2.dao.interfaces.AdminDAO;
+import com.swe306.asg2.dao.interfaces.PatientDAO;
+import com.swe306.asg2.dao.interfaces.QuestionnaireDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

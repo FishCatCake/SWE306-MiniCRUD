@@ -1,6 +1,6 @@
-package com.swe306asg2.login.database;
+package com.swe306.asg2.login.database;
 
-import com.swe306asg2.login.bean.loginBean;
+import com.swe306.asg2.login.bean.loginBean;
 
 import java.sql.*;
 
@@ -9,9 +9,9 @@ public class loginDao {
         boolean status = false;
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        String url ="jdbc:mysql://localhost:3306/Clinic?useSSL=false";
-        String uname="root";
-        String password="password";
+        String url = "jdbc:mysql://localhost:3306/asg2?useSSL=false";
+        String uname = "root";
+        String password = "password";
         String query;
         query = "select * from admin where username = ? and password = ?";
 
@@ -36,7 +36,7 @@ public class loginDao {
     }
 
     private void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
+        for (Throwable e : ex) {
             if (e instanceof SQLException) {
                 e.printStackTrace(System.err);
                 System.err.println("SQLState: " + ((SQLException) e).getSQLState());

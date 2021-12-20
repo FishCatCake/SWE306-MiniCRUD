@@ -1,7 +1,7 @@
-package com.swe306asg2.dao.model;
+package com.swe306.asg2.dao.model;
 
-import com.swe306asg2.dao.factory.DAOFactory;
-import com.swe306asg2.dao.interfaces.PatientDAO;
+import com.swe306.asg2.dao.factory.DAOFactory;
+import com.swe306.asg2.dao.interfaces.PatientDAO;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -40,13 +40,6 @@ public class Patient {
     public void setLastVisitDate(Date lastVisitDate) {
         this.lastVisitDate = lastVisitDate;
     }
-//    public Patient(int id, String fullName, String icNumber, String telNo, String address) {
-//        this.id = id;
-//        this.fullName = fullName;
-//        this.icNumber = icNumber;
-//        this.telNo = telNo;
-//        this.address = address;
-//    }
 
 
     public int getId() {
