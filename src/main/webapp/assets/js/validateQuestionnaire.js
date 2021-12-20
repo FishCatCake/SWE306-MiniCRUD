@@ -1,4 +1,4 @@
-function validate(){
+function validateForm(){
     let Q1 = document.getElementsByName("test");
     let Q2 = document.getElementsByName("vaccine");
     let Q3 = document.getElementsByName("symptom");
