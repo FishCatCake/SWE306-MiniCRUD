@@ -1,6 +1,11 @@
+.title {
+    text-align: center;
+}
+
 .home {
     border: 5px solid rgba(0, 81, 255, 0.68);
     text-align: center;
+    width: auto;
 }
 
 .info table {
@@ -9,18 +14,18 @@
     width: 100%;
 }
 
-table {
+.q table {
+    border: 5px solid rgba(0, 81, 255, 0.68);
+    color: #0066ff;
     margin-left: auto;
     margin-right: auto;
-    border: 1em;
-
+    border-spacing: 1em;
 }
 
-.info td {
+.td {
     width: 600px;
     text-align: left;
     padding: 5px;
-
 }
 
 select {
@@ -38,6 +43,9 @@ select:focus {
     width: auto;
 }
 
+.info {
+    margin-bottom: 15px;
+}
 
 .info td, .info th {
     border: 1px solid #dddddd;
