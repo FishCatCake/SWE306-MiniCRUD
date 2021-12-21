@@ -82,5 +82,6 @@
 <script src="https://unpkg.com/element-ui@2.15.6/lib/index.js"></script>
 <%-- main js --%>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/validatePatient.js"></script>
 <script src="assets/js/patients.js"></script>
 </html>

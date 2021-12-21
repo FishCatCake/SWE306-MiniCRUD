@@ -7,12 +7,12 @@ function validate(){
     let VisitDate = document.getElementById("lastDate");
     let prescription = document.getElementById("prescription");
     let status = 0;
-    if(ICNo.value==="")
+    if(ICNo.value=== null)
     {
         alert("IC No. Can Not Be Empty!");
         return false;
     }
-    if(PatientName.value==="")
+    if(PatientName.value===null)
     {
         alert("Patient Name Can Not Be Empty!");
         return false;
@@ -38,16 +38,16 @@ function validate(){
         return false;
     }
 
-   if(Address.value ==="")
+   if(Address.value ===null)
    {
        alert("Address Can Not Be Empty!");
        return false;
    }
-   if(VisitDate.value ===""){
+   if(VisitDate.value ===null){
        alert("Last Visit Day Can Not Be Empty!");
        return false;
    }
-   if(prescription.value ==="")
+   if(prescription.value ===null)
     {
         alert("Prescription Can Not Be Empty!");
         return false;
@@ -65,7 +65,7 @@ function phoneNumber(inputTelNo) {
     if (inputTelNo.value.match(phoneNo)) {
         return true;
     }
-    else if (inputTelNo.value ===""){
+    else if (inputTelNo.value ===null){
         alert("Phone Number Can Not Be Empty!");
         return false;
     }

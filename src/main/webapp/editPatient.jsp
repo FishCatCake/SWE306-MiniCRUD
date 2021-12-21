@@ -81,13 +81,15 @@
                 </tr>
 
                 <tr>
-                    <td><input type="submit" value="Update Patient"/></td>
+                    <td>
+                        <input  type="button" value="Update Patient" onclick="editConfirm('${p.getId()}', '${p.getFullName()}')"/>
+                    </td>
                 </tr>
-
             </table>
         </form>
     </div>
 </div>
 <script src="assets/js/validatePatient.js"></script>
+<script src="assets/js/patients.js"></script>
 </body>
 </html>
