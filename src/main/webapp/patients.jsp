@@ -35,6 +35,11 @@
     </div>
 </div>
 
+<form action="searchPatient.jsp" method="post">
+    <input type="search" name="IC" placeholder="Search patient by IC"/>
+    <input type="submit" value="search"/>
+</form>
+
 <%
     List<Patient> list = Patient.all();
     request.setAttribute("list", list);
