@@ -31,7 +31,7 @@
         <button onclick="document.location='index.jsp'">Logout</button>
     </div>
     <div>
-        <button onclick="document.location='AddPatient.jsp'">Add Patient</button>
+        <button onclick="document.location='addPatient.jsp'">Add Patient</button>
     </div>
 </div>
 

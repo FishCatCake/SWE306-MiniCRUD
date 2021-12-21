@@ -4,7 +4,7 @@ function validate(){
     let PhoneNumber = document.getElementById("telNo");
     let Gender = document.getElementsByName("gender");
     let Address = document.getElementById("address");
-    let VisitDate = document.getElementById("lastVisitDate");
+    let VisitDate = document.getElementById("lastDate");
     let prescription = document.getElementById("prescription");
     let status = 0;
     if(ICNo.value==="")

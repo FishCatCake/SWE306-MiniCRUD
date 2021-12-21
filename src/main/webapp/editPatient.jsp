@@ -62,7 +62,7 @@
 
                 <tr>
                     <td>Patient Last Visit Date:</td>
-                    <td><input type="date" name="lastVisitDate" id="lastVisitDate" value="${p.getLastDate()}"></td>
+                    <td><input type="date" name="lastDate" id="lastDate" value="${p.getLastDate()}"></td>
                 </tr>
 
                 <tr>
@@ -78,5 +78,6 @@
         </form>
     </div>
 </div>
+<script src="assets/js/validatePatient.js"></script>
 </body>
 </html>

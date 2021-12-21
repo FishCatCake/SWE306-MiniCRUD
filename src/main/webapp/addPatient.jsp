@@ -60,5 +60,6 @@
         </form>
     </div>
 </div>
+<script src="assets/js/validatePatient.js"></script>
 </body>
 </html>
