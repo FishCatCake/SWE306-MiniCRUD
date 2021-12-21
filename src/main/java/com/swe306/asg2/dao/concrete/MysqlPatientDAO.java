@@ -30,7 +30,7 @@ public class MysqlPatientDAO implements PatientDAO {
             pstmt.setString(2, patient.getFullName());
             pstmt.setString(3, patient.getTelNo());
             pstmt.setString(4, patient.getAddress());
-            pstmt.setDate(5, patient.getLastVisitDate());
+            pstmt.setDate(5, patient.getLastDate());
             pstmt.setString(6, patient.getPrescription());
             pstmt.setString(7, patient.getGender());
             status = pstmt.executeUpdate();
@@ -49,7 +49,7 @@ public class MysqlPatientDAO implements PatientDAO {
             pstmt.setString(2, p.getFullName());
             pstmt.setString(3, p.getTelNo());
             pstmt.setString(4, p.getAddress());
-            pstmt.setDate(5, p.getLastVisitDate());
+            pstmt.setDate(5, p.getLastDate());
             pstmt.setString(6, p.getPrescription());
             pstmt.setString(7, p.getGender());
             status = pstmt.executeUpdate();
@@ -72,7 +72,7 @@ public class MysqlPatientDAO implements PatientDAO {
                 patient.setGender(rset.getString("gender"));
                 patient.setFullName(rset.getString("full_name"));
                 patient.setAddress(rset.getString("address"));
-                patient.setLastVisitDate(rset.getString("last_visit_date"));
+                patient.setLastDate(rset.getString("last_visit_date"));
                 patient.setTelNo(rset.getString("tel_no"));
                 patient.setPrescription(rset.getString("prescription"));
             }
@@ -130,7 +130,7 @@ public class MysqlPatientDAO implements PatientDAO {
         patient.setGender(rset.getString("gender"));
         patient.setFullName(rset.getString("full_name"));
         patient.setAddress(rset.getString("address"));
-        patient.setLastVisitDate(rset.getString("last_visit_date"));
+        patient.setLastDate(rset.getString("last_visit_date"));
         patient.setTelNo(rset.getString("tel_no"));
         patient.setPrescription(rset.getString("prescription"));
 

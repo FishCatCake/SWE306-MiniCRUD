@@ -45,7 +45,7 @@
             <td>${p.getPrescription()}</td>
             <td>${p.getAddress()}</td>
             <td>${p.getTelNo()}</td>
-            <td>${p.getLastVisitDate()}</td>
+            <td>${p.getLastDate()}</td>
         </tr>
     </table>
 </div>

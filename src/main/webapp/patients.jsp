@@ -63,9 +63,9 @@
                 </td>
                 <td>${p.getAddress()}</td>
                 <td>${p.getTelNo()}</td>
-                <td>${p.getLastVisitDate()}</td>
+                <td>${p.getLastDate()}</td>
                 <td>
-                    <button onclick="">Edit</button>
+                    <button onclick="document.location='editPatient.jsp?id=${p.getId()}'">Edit</button>
                     <button onclick="deleteConfirm('${p.getId()}', '${p.getFullName()}')">Delete
                     </button>
                 </td>

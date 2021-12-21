@@ -6,7 +6,6 @@ import com.swe306.asg2.dao.interfaces.PatientDAO;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class Patient {
@@ -17,7 +16,7 @@ public class Patient {
     private String address;
     private String gender;
     private String prescription;
-    private Date lastVisitDate;
+    private Date lastDate;
 
     public String getGender() {
         return gender;
@@ -35,15 +34,15 @@ public class Patient {
         this.prescription = prescription;
     }
 
-    public Date getLastVisitDate() {
-        System.out.println("TDate: " + this.lastVisitDate);
-        return lastVisitDate;
+    public Date getLastDate() {
+        System.out.println("TDate: " + this.lastDate);
+        return lastDate;
     }
 
-    public void setLastVisitDate(String lastVisitDate) {
-        Date date = java.sql.Date.valueOf(lastVisitDate);
+    public void setLastDate(String lastDate) {
+        Date date = java.sql.Date.valueOf(lastDate);
         System.out.println("Date: " + date);
-        this.lastVisitDate = date;
+        this.lastDate = date;
     }
 
 

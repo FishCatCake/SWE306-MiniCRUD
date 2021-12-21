@@ -34,8 +34,8 @@
                 </tr>
                 <tr>
                     <td>Patient Gender:</td>
-                    <td><input type="radio" name="gender" value="Male">Male</td>
-                    <td><input type="radio" name="gender" value="Female">Female</td>
+                    <td><input type="radio" name="gender" value="male">Male</td>
+                    <td><input type="radio" name="gender" value="female">Female</td>
                 </tr>
                 <tr>
                     <td>Patient Address:</td>
@@ -44,7 +44,7 @@
 
                 <tr>
                     <td>Patient Last Visit Date:</td>
-                    <td><input type="date" name="lastVisitDate" id="lastVisitDate"></td>
+                    <td><input type="date" name="lastDate" id="lastDate"></td>
                 </tr>
 
                 <tr>
