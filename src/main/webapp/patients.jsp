@@ -35,6 +35,11 @@
     </div>
 </div>
 
+<form action="searchPatient.jsp" method="post">
+    <input type="search" name="IC" placeholder="Search patient by IC"/>
+    <input type="submit" value="search"/>
+</form>
+
 <%
     List<Patient> list = Patient.all();
     request.setAttribute("list", list);
@@ -82,5 +87,6 @@
 <script src="https://unpkg.com/element-ui@2.15.6/lib/index.js"></script>
 <%-- main js --%>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/validatePatient.js"></script>
 <script src="assets/js/patients.js"></script>
 </html>

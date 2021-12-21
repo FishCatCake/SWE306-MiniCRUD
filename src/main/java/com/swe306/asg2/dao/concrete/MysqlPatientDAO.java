@@ -19,8 +19,8 @@ public class MysqlPatientDAO implements PatientDAO {
     private static final String SQL_DELETE = "DELETE FROM patient WHERE id=?";
     private static final String SQL_SELECT_ID = "SELECT * FROM patient WHERE id=?";
     private static final String SQL_UPDATE =
-            "UPDATE patient set ic_number=?, full_name=?, tel_no=?, address=?, last_visit_date=?, prescription=?, gender=? WHERE id=?";
-
+            "UPDATE patients set ic_number=?, full_name=?, tel_no=?, address=?, last_visit_date=?, prescription=?, gender=? WHERE id=?";
+    private static final String SQL_SELECT_IC = "SELECT * FROM patients WHERE ic_number=?";
     public static int insert(Patient patient) throws SQLException {
         int status = 0;
         try {
@@ -71,6 +71,29 @@ public class MysqlPatientDAO implements PatientDAO {
             while (rset.next()) {
 //                patient = createPatient(rset);
 //                FIXME static or not static workaround:
+                patient.setId(rset.getInt("id"));
+                patient.setIcNumber(rset.getString("ic_number"));
+                patient.setGender(rset.getString("gender"));
+                patient.setFullName(rset.getString("full_name"));
+                patient.setAddress(rset.getString("address"));
+                patient.setLastDate(rset.getString("last_visit_date"));
+                patient.setTelNo(rset.getString("tel_no"));
+                patient.setPrescription(rset.getString("prescription"));
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return patient;
+    }
+
+    public static Patient selectPatientByIC(String ic) throws SQLException {
+        Patient patient = new Patient();
+        try {
+            Connection c = DAOFactory.getDatabase().openCon();
+            PreparedStatement pstmt = c.prepareStatement(SQL_SELECT_IC);
+            pstmt.setString(1, ic);
+            ResultSet rset = pstmt.executeQuery();
+            while (rset.next()) {
                 patient.setId(rset.getInt("id"));
                 patient.setIcNumber(rset.getString("ic_number"));
                 patient.setGender(rset.getString("gender"));

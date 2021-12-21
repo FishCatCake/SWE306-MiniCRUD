@@ -61,5 +61,6 @@
     </div>
 </div>
 <script src="assets/js/validatePatient.js"></script>
+<script src="assets/js/patients.js"></script>
 </body>
 </html>
