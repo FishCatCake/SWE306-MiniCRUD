@@ -21,8 +21,7 @@ public class MysqlPatientDAO implements PatientDAO {
     private static final String SQL_UPDATE =
             "UPDATE patients set ic_number=?, full_name=?, tel_no=?, address=?, last_visit_date=?, prescription=?, gender=? WHERE id=?";
 
-    @Override
-    public int insert(Patient patient) throws SQLException {
+    public static int insert(Patient patient) throws SQLException {
         int status = 0;
         try {
             Connection con = DAOFactory.getDatabase().openCon();
@@ -73,7 +72,7 @@ public class MysqlPatientDAO implements PatientDAO {
                 patient.setGender(rset.getString("gender"));
                 patient.setFullName(rset.getString("full_name"));
                 patient.setAddress(rset.getString("address"));
-                patient.setLastVisitDate(rset.getDate("last_visit_date"));
+                patient.setLastVisitDate(rset.getString("last_visit_date"));
                 patient.setTelNo(rset.getString("tel_no"));
                 patient.setPrescription(rset.getString("prescription"));
             }
@@ -131,7 +130,7 @@ public class MysqlPatientDAO implements PatientDAO {
         patient.setGender(rset.getString("gender"));
         patient.setFullName(rset.getString("full_name"));
         patient.setAddress(rset.getString("address"));
-        patient.setLastVisitDate(rset.getDate("last_visit_date"));
+        patient.setLastVisitDate(rset.getString("last_visit_date"));
         patient.setTelNo(rset.getString("tel_no"));
         patient.setPrescription(rset.getString("prescription"));
 

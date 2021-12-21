@@ -1,10 +1,12 @@
 package com.swe306.asg2.dao.model;
 
+import com.swe306.asg2.dao.concrete.MysqlPatientDAO;
 import com.swe306.asg2.dao.factory.DAOFactory;
 import com.swe306.asg2.dao.interfaces.PatientDAO;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class Patient {
@@ -34,11 +36,14 @@ public class Patient {
     }
 
     public Date getLastVisitDate() {
+        System.out.println("TDate: " + this.lastVisitDate);
         return lastVisitDate;
     }
 
-    public void setLastVisitDate(Date lastVisitDate) {
-        this.lastVisitDate = lastVisitDate;
+    public void setLastVisitDate(String lastVisitDate) {
+        Date date = java.sql.Date.valueOf(lastVisitDate);
+        System.out.println("Date: " + date);
+        this.lastVisitDate = date;
     }
 
 
@@ -93,12 +98,14 @@ public class Patient {
     }
 
     // save current patient to the database
-    public void save() throws SQLException {
-        patientDAO().insert(this);
+    public int save() throws SQLException {
+//        int status = patientDAO().insert(this);
+        int status = MysqlPatientDAO.insert(this);
+        return status;
     }
 
     // delete current patient in the database
-    public void delete() throws SQLException{
+    public void delete() throws SQLException {
         patientDAO().delete(this);
     }
 

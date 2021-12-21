@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface PatientDAO {
-    int insert(Patient patient) throws SQLException;
+//    static int insert(Patient patient) throws SQLException;
 
     List<Patient> all() throws SQLException;
 

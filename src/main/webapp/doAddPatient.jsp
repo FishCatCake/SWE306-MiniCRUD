@@ -1,4 +1,5 @@
 <%@ page import="com.swe306.asg2.dao.model.Patient" %>
+<%@ page import="com.swe306.asg2.dao.concrete.MysqlPatientDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,12 +10,14 @@
 <jsp:setProperty property="*" name="p"/>
 
 <%
-    int i = Patient.save(p);
 
-    if(i>0){
-        response.sendRedirect("addPatient-success.jsp");
-    }else{
-        response.sendRedirect("addPatient-failed.jsp");
+    int i = MysqlPatientDAO.insert(p);
+
+    if (i > 0) {
+        response.sendRedirect("patients.jsp");
+    } else {
+//        response.sendRedirect("addPatient-failed.jsp");
+        System.out.println("Failed to add patient");
     }
 
 %>

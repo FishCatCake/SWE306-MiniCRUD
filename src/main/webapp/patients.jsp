@@ -26,10 +26,13 @@
         String usr = admin.getUsername();
         request.setAttribute("usr", usr);
     %>
-
-    Welcome, <c:out value="${usr}"/>.
-
-    <button onclick="document.location='index.jsp'">Logout</button>
+    <div>
+        Welcome, <c:out value="${usr}"/>.
+        <button onclick="document.location='index.jsp'">Logout</button>
+    </div>
+    <div>
+        <button onclick="document.location='AddPatient.jsp'">Add Patient</button>
+    </div>
 </div>
 
 <%
