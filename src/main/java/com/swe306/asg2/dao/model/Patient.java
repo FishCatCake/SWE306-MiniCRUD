@@ -16,7 +16,7 @@ public class Patient {
     private String address;
     private String gender;
     private String prescription;
-    private Date lastDate;
+    private String lastDate;
 
     public String getGender() {
         return gender;
@@ -34,15 +34,13 @@ public class Patient {
         this.prescription = prescription;
     }
 
-    public Date getLastDate() {
-        System.out.println("TDate: " + this.lastDate);
+    public String getLastDate() {
         return lastDate;
     }
 
     public void setLastDate(String lastDate) {
-        Date date = java.sql.Date.valueOf(lastDate);
-        System.out.println("Date: " + date);
-        this.lastDate = date;
+        System.out.println("set date: " + lastDate);
+        this.lastDate = lastDate;
     }
 
 

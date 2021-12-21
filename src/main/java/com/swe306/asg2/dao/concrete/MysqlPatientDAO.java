@@ -30,7 +30,7 @@ public class MysqlPatientDAO implements PatientDAO {
             pstmt.setString(2, patient.getFullName());
             pstmt.setString(3, patient.getTelNo());
             pstmt.setString(4, patient.getAddress());
-            pstmt.setDate(5, patient.getLastDate());
+            pstmt.setString(5, patient.getLastDate());
             pstmt.setString(6, patient.getPrescription());
             pstmt.setString(7, patient.getGender());
             status = pstmt.executeUpdate();
@@ -44,12 +44,13 @@ public class MysqlPatientDAO implements PatientDAO {
         int status = 0;
         try {
             Connection con = DAOFactory.getDatabase().openCon();
+            System.out.println("id: " + patient.getId());
             PreparedStatement pstmt = con.prepareStatement(SQL_UPDATE);
             pstmt.setString(1, patient.getIcNumber());
             pstmt.setString(2, patient.getFullName());
             pstmt.setString(3, patient.getTelNo());
             pstmt.setString(4, patient.getAddress());
-            pstmt.setDate(5, patient.getLastDate());
+            pstmt.setString(5, patient.getLastDate());
             pstmt.setString(6, patient.getPrescription());
             pstmt.setString(7, patient.getGender());
             pstmt.setInt(8, patient.getId());

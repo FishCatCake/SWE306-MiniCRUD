@@ -37,6 +37,10 @@
     <div class="form">
         <form onsubmit="return validate();" action="doEditPatient.jsp" method="post">
             <table>
+                <tr style="display: none;">
+                    <td>Patient ID:</td>
+                    <td><input type="text" name="id" id="id" value="${p.getId()}"></td>
+                </tr>
                 <tr>
                     <td>Patient IC No.:</td>
                     <td><input type="text" name="icNumber" id="icNumber" value="${p.getIcNumber()}"></td>

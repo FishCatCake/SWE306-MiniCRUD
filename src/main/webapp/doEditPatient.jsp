@@ -22,7 +22,7 @@
         response.sendRedirect("patients.jsp");
     } else {
 //        response.sendRedirect("addPatient-failed.jsp");
-        System.out.println("Failed to add patient");
+        System.out.println("Failed to edit patient");
     }
 
 %>
