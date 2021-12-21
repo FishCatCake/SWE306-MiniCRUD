@@ -18,11 +18,13 @@ function validate(){
         return false;
     }
 
-    if(PhoneNumber.value==="")
+    phoneNumber(PhoneNumber)
+
+   /* if(PhoneNumber.value==="")
     {
         alert("Phone Number Can Not Be Empty!");
         return false;
-    }
+    }*/
     for(let temp in Gender)
     {
         if(Gender[temp].checked)
@@ -50,6 +52,25 @@ function validate(){
         alert("Prescription Can Not Be Empty!");
         return false;
     }
-
     return true;
+}
+
+function phoneNumber(inputTelNo) {
+
+    /* Phone number format
+    XXX-XXX-XXXX
+    XXX.XXX.XXXX
+    XXX XXX XXXX*/
+    let phoneNo = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if (inputTelNo.value.match(phoneNo)) {
+        return true;
+    }
+    else if (inputTelNo.value ===""){
+        alert("Phone Number Can Not Be Empty!");
+        return false;
+    }
+    else {
+        alert("Wrong Phone Number Format!");
+        return false;
+    }
 }
