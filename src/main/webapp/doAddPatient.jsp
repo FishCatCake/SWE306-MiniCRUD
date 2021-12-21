@@ -16,8 +16,9 @@
     if (i > 0) {
         response.sendRedirect("patients.jsp");
     } else {
-//        response.sendRedirect("addPatient-failed.jsp");
-        System.out.println("Failed to add patient");
+        String msg = "Failed to update questionnaire";
+        response.sendRedirect("error.jsp?msg=" + msg);
+        System.out.println(msg);
     }
 
 %>

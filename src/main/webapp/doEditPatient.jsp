@@ -21,8 +21,9 @@
     if (i > 0) {
         response.sendRedirect("patients.jsp");
     } else {
-//        response.sendRedirect("addPatient-failed.jsp");
-        System.out.println("Failed to edit patient");
+        String msg = "Failed to edit patient";
+        response.sendRedirect("error.jsp?msg=" + msg);
+        System.out.println(msg);
     }
 
 %>

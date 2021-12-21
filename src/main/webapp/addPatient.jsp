@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add patient</title>
+    <title>Add New Patient</title>
     <style>
         .home {
             text-align: center;

@@ -12,9 +12,24 @@
     <title>Error Page</title>
 </head>
 <body>
+<%
+    String msg;
+    if (request.getParameter("msg") != null) {
+        msg = request.getParameter("msg");
+    } else {
+        msg = "";
+    }
+    request.setAttribute("msg", msg);
+%>
+
 <h1>
     There is something wrong, please try again later.
 </h1>
+<h2>
+    <code>
+        ${msg}
+    </code>
+</h2>
 <h3>
     You will be redirected to <a href="/login.jsp">login page</a> in 5 seconds.
 </h3>

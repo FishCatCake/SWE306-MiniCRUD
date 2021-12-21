@@ -1,5 +1,6 @@
 package com.swe306.asg2.dao.model;
 
+import com.swe306.asg2.dao.concrete.MysqlQuestionnaireDAO;
 import com.swe306.asg2.dao.factory.DAOFactory;
 import com.swe306.asg2.dao.interfaces.QuestionnaireDAO;
 
@@ -75,8 +76,9 @@ public class Questionnaire {
         DAOFactory dao = DAOFactory.getDatabase();
         return dao.getQuestionnaireDAO();
     }
-    public void save() throws SQLException {
-        questionnaireDAO().insert(this);
+    public int save() throws SQLException {
+        int status = MysqlQuestionnaireDAO.insert(this);
+        return status;
     }
 }
 

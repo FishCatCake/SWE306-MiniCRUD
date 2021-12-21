@@ -39,7 +39,7 @@ public class Patient {
     }
 
     public void setLastDate(String lastDate) {
-        System.out.println("set date: " + lastDate);
+//        System.out.println("set date: " + lastDate);
         this.lastDate = lastDate;
     }
 

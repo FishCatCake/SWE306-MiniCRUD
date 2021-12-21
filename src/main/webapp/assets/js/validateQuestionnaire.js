@@ -1,9 +1,9 @@
 function validateForm(){
-    let Q1 = document.getElementsByName("test");
-    let Q2 = document.getElementsByName("vaccine");
-    let Q3 = document.getElementsByName("symptom");
-    let Q4 = document.getElementsByName("cluster");
-    let Q5 = document.getElementsByName("closeContact");
+    let Q1 = document.getElementsByName("q1");
+    let Q2 = document.getElementsByName("q2");
+    let Q3 = document.getElementsByName("q3");
+    let Q4 = document.getElementsByName("q4");
+    let Q5 = document.getElementsByName("q5");
     let status = 0;
     for(let temp in Q1)
     {

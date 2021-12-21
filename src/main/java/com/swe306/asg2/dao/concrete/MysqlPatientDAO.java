@@ -14,12 +14,12 @@ import java.util.List;
 // implementation of PatientDAO to Mysql methods
 public class MysqlPatientDAO implements PatientDAO {
     // prepared statements for SQL query
-    private static final String SQL_SELECT_ALL = "SELECT * FROM patients";
-    private static final String SQL_INSERT = "INSERT INTO patients (ic_number, full_name, tel_no, address, last_visit_date, prescription, gender) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    private static final String SQL_DELETE = "DELETE FROM patients WHERE id=?";
-    private static final String SQL_SELECT_ID = "SELECT * FROM patients WHERE id=?";
+    private static final String SQL_SELECT_ALL = "SELECT * FROM patient";
+    private static final String SQL_INSERT = "INSERT INTO patient (ic_number, full_name, tel_no, address, last_visit_date, prescription, gender) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    private static final String SQL_DELETE = "DELETE FROM patient WHERE id=?";
+    private static final String SQL_SELECT_ID = "SELECT * FROM patient WHERE id=?";
     private static final String SQL_UPDATE =
-            "UPDATE patients set ic_number=?, full_name=?, tel_no=?, address=?, last_visit_date=?, prescription=?, gender=? WHERE id=?";
+            "UPDATE patient set ic_number=?, full_name=?, tel_no=?, address=?, last_visit_date=?, prescription=?, gender=? WHERE id=?";
 
     public static int insert(Patient patient) throws SQLException {
         int status = 0;
@@ -40,11 +40,11 @@ public class MysqlPatientDAO implements PatientDAO {
         return status;
     }
 
-    public static int update(Patient patient) {
+    public static int update(Patient patient) throws SQLException {
         int status = 0;
         try {
             Connection con = DAOFactory.getDatabase().openCon();
-            System.out.println("id: " + patient.getId());
+//            System.out.println("id: " + patient.getId());
             PreparedStatement pstmt = con.prepareStatement(SQL_UPDATE);
             pstmt.setString(1, patient.getIcNumber());
             pstmt.setString(2, patient.getFullName());
@@ -69,6 +69,8 @@ public class MysqlPatientDAO implements PatientDAO {
             pstmt.setInt(1, id);
             ResultSet rset = pstmt.executeQuery();
             while (rset.next()) {
+//                patient = createPatient(rset);
+//                FIXME static or not static workaround:
                 patient.setId(rset.getInt("id"));
                 patient.setIcNumber(rset.getString("ic_number"));
                 patient.setGender(rset.getString("gender"));
