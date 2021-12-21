@@ -1,54 +1,48 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: apple
-  Date: 2021/12/18
-  Time: 7:59 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.swe306.asg2.dao.model.Patient" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.swe306.asg2.dao.interfaces.PatientDAO" %>
+<%@ page import="com.swe306.asg2.dao.concrete.MysqlPatientDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%
+    String requestId = request.getParameter("id");
+    Patient p = MysqlPatientDAO.selectPatientById(Integer.parseInt(requestId));
+    request.setAttribute("p", p);
+    System.out.println(p.getIcNumber());
+%>
 <head>
-    <title>Questionnaire</title>
-    <style>
-        div {
-            border: 5px solid rgba(0, 81, 255, 0.68);
-            text-align: center;
-        }
-        table {
-            margin-left: auto;
-            margin-right: auto;
-            border-spacing: 1em;
-
-        }
-        td {
-            width: 600px;
-            text-align: left;
-            padding: 5px;
-
-        }
-        select {
-            color: #0066ff;
-            background: rgba(255, 221, 0, 0.73);
-            border: 10px;
-            font-size: medium;
-            width: 150px;
-            margin: 10px;
-
-        }
-        select:focus {
-            min-width: 150px;
-            width: auto;
-        }
-        b {
-            font-size: large;
-        }
-    </style>
+    <title>${p.getFullName()} - Questionnaire</title>
+    <link rel="stylesheet" href="/assets/css/questionnaire.css">
 </head>
 <body>
-    <header style="text-align: center"><h1>COVID-19 Questionnaire</h1></header>
-
-    <div>
-    <form onsubmit="return validate();"action="?"  method="post">
+<header style="text-align: center"><h1>COVID-19 Questionnaire</h1></header>
+<div class="opts">
+    <button onclick="document.location='patients.jsp'">Back to Homepage</button>
+</div>
+<div class="info">
+    <table>
+        <tr>
+            <th>IC No.</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Prescription</th>
+            <th>Address</th>
+            <th>Tel No.</th>
+            <th>Last Visit</th>
+        </tr>
+        <tr>
+            <td>${p.getIcNumber()}</td>
+            <td>${p.getFullName()}</td>
+            <td>${p.getGender()}</td>
+            <td>${p.getPrescription()}</td>
+            <td>${p.getAddress()}</td>
+            <td>${p.getTelNo()}</td>
+            <td>${p.getLastVisitDate()}</td>
+        </tr>
+    </table>
+</div>
+<div class="home">
+    <form onsubmit="return validate();" action="?" method="post">
         <table>
             <tr>
                 <td>
@@ -94,17 +88,20 @@
 
             <tr>
                 <td>
-                    <b>5. Do you have any close contact to confirmed or suspected case of COVID-19 case within 14 days?</b><br>
+                    <b>5. Do you have any close contact to confirmed or suspected case of COVID-19 case within 14
+                        days?</b><br>
                     <select name="closeContact">
                         <option value="a">Yes</option>
                         <option value="b">No</option>
                     </select>
                 </td>
             </tr>
-            <tr><td><input type="submit" value="Submit"/></td></tr>
+            <tr>
+                <td><input type="submit" value="Submit"/></td>
+            </tr>
         </table>
     </form>
-    </div>
+</div>
 
 </body>
 </html>

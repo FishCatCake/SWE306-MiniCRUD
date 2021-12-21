@@ -1,0 +1,59 @@
+.home {
+    border: 5px solid rgba(0, 81, 255, 0.68);
+    text-align: center;
+}
+
+.info table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1em;
+
+}
+
+.info td {
+    width: 600px;
+    text-align: left;
+    padding: 5px;
+
+}
+
+select {
+    color: #0066ff;
+    background: rgba(255, 221, 0, 0.73);
+    border: 10px;
+    font-size: medium;
+    width: 150px;
+    margin: 10px;
+}
+
+
+select:focus {
+    min-width: 150px;
+    width: auto;
+}
+
+
+.info td, .info th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.info tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+b {
+    font-size: large;
+}
+
+.opts {
+    text-align: center;
+    margin-bottom: 15px;
+}
