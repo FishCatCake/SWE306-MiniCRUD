@@ -11,22 +11,32 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="/assets/css/patients.css">
 </head>
 <body>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String IC = request.getParameter("IC");
-    Patient p = MysqlPatientDAO.selectPatientByIC(IC);
+    Patient p = MysqlPatientDAO.selectPatientByIc(IC);
 
-    if(p.getIcNumber()==null)
-    {
+    if (p.getIcNumber() == null) {
         response.sendRedirect("searchFailed.jsp");
     }
 %>
+<div class="title">
+    <h1 class="title">
+        Clinic Management System
+    </h1>
+    <h2>Search Result</h2>
+</div>
+
 <form action="searchPatient.jsp" method="post">
     <input type="search" name="IC" value="<%=request.getParameter("IC")%>"/>
-    <input type="submit" value="search"/>
+    <input type="submit" value="Search"/>
 </form>
+<div style="margin-bottom: 10px;">
+    <button onclick="document.location='patients.jsp'">Go Back</button>
+</div>
 </body>
 <div id="app">
     <table>
@@ -41,23 +51,30 @@
             <th>Last Visit</th>
             <th>Action</th>
         </tr>
-            <tr>
-                <td><%=p.getIcNumber()%></td>
-                <td><%=p.getFullName()%></td>
-                <td><%=p.getGender()%></td>
-                <td><%=p.getPrescription()%></td>
-                <td>
-                    <button onclick="document.location='questionnaire.jsp?id=${p.getId()}'">Questionnaire</button>
-                </td>
-                <td><%=p.getAddress()%></td>
-                <td><%=p.getTelNo()%></td>
-                <td><%=p.getLastDate()%></td>
-                <td>
-                    <button onclick="document.location='editPatient.jsp?id=${p.getId()}'">Edit</button>
-                    <button onclick="deleteConfirm('${p.getId()}', '${p.getFullName()}')">Delete
-                    </button>
-                </td>
-            </tr>
+        <tr>
+            <td><%=p.getIcNumber()%>
+            </td>
+            <td><%=p.getFullName()%>
+            </td>
+            <td><%=p.getGender()%>
+            </td>
+            <td><%=p.getPrescription()%>
+            </td>
+            <td>
+                <button onclick="document.location='questionnaire.jsp?id=${p.getId()}'">Questionnaire</button>
+            </td>
+            <td><%=p.getAddress()%>
+            </td>
+            <td><%=p.getTelNo()%>
+            </td>
+            <td><%=p.getLastDate()%>
+            </td>
+            <td>
+                <button onclick="document.location='editPatient.jsp?id=${p.getId()}'">Edit</button>
+                <button onclick="deleteConfirm('${p.getId()}', '${p.getFullName()}')">Delete
+                </button>
+            </td>
+        </tr>
     </table>
 </div>
 </body>

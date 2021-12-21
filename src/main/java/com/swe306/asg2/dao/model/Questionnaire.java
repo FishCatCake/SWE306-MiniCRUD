@@ -7,7 +7,15 @@ import com.swe306.asg2.dao.interfaces.QuestionnaireDAO;
 import java.sql.SQLException;
 
 public class Questionnaire {
-    private int questionnaire_id;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
     private String icNumber;
 
     public String getQ1() {

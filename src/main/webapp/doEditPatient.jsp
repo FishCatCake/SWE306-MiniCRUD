@@ -1,10 +1,4 @@
-<%@ page import="com.swe306.asg2.dao.concrete.MysqlPatientDAO" %><%--
-  Created by IntelliJ IDEA.
-  User: jukrb0x
-  Date: 21/12/2021
-  Time: 4:25 pm
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.swe306.asg2.dao.concrete.MysqlPatientDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

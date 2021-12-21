@@ -20,7 +20,8 @@ public class MysqlPatientDAO implements PatientDAO {
     private static final String SQL_SELECT_ID = "SELECT * FROM patient WHERE id=?";
     private static final String SQL_UPDATE =
             "UPDATE patients set ic_number=?, full_name=?, tel_no=?, address=?, last_visit_date=?, prescription=?, gender=? WHERE id=?";
-    private static final String SQL_SELECT_IC = "SELECT * FROM patients WHERE ic_number=?";
+    private static final String SQL_SELECT_IC = "SELECT * FROM patient WHERE ic_number=?";
+
     public static int insert(Patient patient) throws SQLException {
         int status = 0;
         try {
@@ -86,12 +87,12 @@ public class MysqlPatientDAO implements PatientDAO {
         return patient;
     }
 
-    public static Patient selectPatientByIC(String ic) throws SQLException {
+    public static Patient selectPatientByIc(String icNumber) throws SQLException {
         Patient patient = new Patient();
         try {
             Connection c = DAOFactory.getDatabase().openCon();
             PreparedStatement pstmt = c.prepareStatement(SQL_SELECT_IC);
-            pstmt.setString(1, ic);
+            pstmt.setString(1, icNumber);
             ResultSet rset = pstmt.executeQuery();
             while (rset.next()) {
                 patient.setId(rset.getInt("id"));

@@ -8,21 +8,6 @@
     <title>Title</title>
 </head>
 <body>
-<%
-    if (request.getParameter("id") == null) {
-        response.sendRedirect("/patients.jsp");
-        return;
-    } else {
-        String requestId = request.getParameter("id");
-        Patient p = MysqlPatientDAO.selectPatientById(Integer.parseInt(requestId));
-        Questionnaire q = MysqlQuestionnaireDAO.selectByIcNumber(p.getIcNumber());
-        if (q.getQ1() != null) {
-            response.sendRedirect("/questionnaire.jsp?id=" + requestId);
-            return;
-        }
-    }
-%>
-
 
 <jsp:useBean id="p" class="com.swe306.asg2.dao.model.Questionnaire"></jsp:useBean>
 <jsp:setProperty property="*" name="p"/>
@@ -30,9 +15,10 @@
 <%
 
     int i = MysqlQuestionnaireDAO.insert(p);
+    Patient patient = MysqlPatientDAO.selectPatientByIc(p.getIcNumber());
 
     if (i > 0) {
-        response.sendRedirect("/patients.jsp");
+        response.sendRedirect("/questionnaire.jsp?id=" + patient.getId());
         return;
     } else {
         response.sendRedirect("error.jsp");

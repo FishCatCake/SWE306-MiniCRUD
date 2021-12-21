@@ -10,13 +10,13 @@
     if (request.getParameter("id") == null) {
         response.sendRedirect("/patients.jsp");
     } else {
-        String requestId = request.getParameter("id");
-        Patient p = MysqlPatientDAO.selectPatientById(Integer.parseInt(requestId));
+        String id = request.getParameter("id");
+        Patient p = MysqlPatientDAO.selectPatientById(Integer.parseInt(id));
         request.setAttribute("p", p);
         Questionnaire q = MysqlQuestionnaireDAO.selectByIcNumber(p.getIcNumber());
         request.setAttribute("q", q);
         if (q.getQ1() == null) {
-            response.sendRedirect("/addQuestionnaire.jsp?id=" + requestId);
+            response.sendRedirect("/addQuestionnaire.jsp?id=" + id);
         }
     }
 %>
