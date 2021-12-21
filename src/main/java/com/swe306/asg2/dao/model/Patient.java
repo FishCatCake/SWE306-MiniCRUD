@@ -98,5 +98,8 @@ public class Patient {
     }
 
     // delete current patient in the database
+    public void delete() throws SQLException{
+        patientDAO().delete(this);
+    }
 
 }

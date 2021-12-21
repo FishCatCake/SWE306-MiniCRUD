@@ -31,7 +31,7 @@ public class Admin {
         return dao.getAdminDAO();
     }
 
-    private void save() throws SQLException {
-        adminDAO().insert(this.username, this.password);
-    }
+//    private void save() throws SQLException {
+//        adminDAO().insert(this.username, this.password);
+//    }
 }

@@ -63,7 +63,8 @@
                 <td>${p.getLastVisitDate()}</td>
                 <td>
                     <button onclick="">Edit</button>
-                    <button>Delete</button>
+                    <button onclick="deleteConfirm('${p.getId()}', '${p.getFullName()}')">Delete
+                    </button>
                 </td>
             </tr>
         </c:forEach>
@@ -78,4 +79,5 @@
 <script src="https://unpkg.com/element-ui@2.15.6/lib/index.js"></script>
 <%-- main js --%>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/patients.js"></script>
 </html>

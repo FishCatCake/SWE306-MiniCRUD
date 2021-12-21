@@ -15,16 +15,30 @@ import java.util.List;
 public class MysqlPatientDAO implements PatientDAO {
     // prepared statements for SQL query
     private static final String SQL_SELECT_ALL = "SELECT * FROM patients";
-    private static final String SQL_INSERT = "INSERT INTO patients (id, full_name, ic_number, tel_no, address) VALUES (?, ?, ?, ?, ?)";
+    private static final String SQL_INSERT = "INSERT INTO patients (ic_number, full_name, tel_no, address, last_visit_date, prescription, gender) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String SQL_DELETE = "DELETE FROM patients WHERE id=?";
     private static final String SQL_SELECT_ID = "SELECT * FROM patients WHERE id=?";
     private static final String SQL_UPDATE =
             "UPDATE patients set ic_number=?, full_name=?, tel_no=?, address=?, last_visit_date=?, prescription=?, gender=? WHERE id=?";
 
     @Override
-    public Patient insert(Patient patient) throws SQLException {
-        // useless
-        return null;
+    public int insert(Patient patient) throws SQLException {
+        int status = 0;
+        try {
+            Connection con = DAOFactory.getDatabase().openCon();
+            PreparedStatement pstmt = con.prepareStatement(SQL_INSERT);
+            pstmt.setString(1, patient.getIcNumber());
+            pstmt.setString(2, patient.getFullName());
+            pstmt.setString(3, patient.getTelNo());
+            pstmt.setString(4, patient.getAddress());
+            pstmt.setDate(5, patient.getLastVisitDate());
+            pstmt.setString(6, patient.getPrescription());
+            pstmt.setString(7, patient.getGender());
+            status = pstmt.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return status;
     }
 
     public static int update(Patient p) {
