@@ -28,12 +28,18 @@
             display: flex;
             justify-content: center;
         }
+
+        .opts {
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
 <div class="home">
     <h1>Edit patient - ${p.getFullName()}</h1>
-    <button onclick="document.location='patients.jsp'">Back</button>
+    <div class="opts">
+        <button onclick="document.location='patients.jsp'">Back</button>
+    </div>
     <div class="form">
         <form onsubmit="return validate();" action="doEditPatient.jsp" method="post">
             <table>

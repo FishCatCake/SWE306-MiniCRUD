@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="home">
-    <h1>Add new patient</h1>
+    <h1>Add New Patient</h1>
     <button onclick="document.location='patients.jsp'">Back</button>
     <div class="form">
         <form onsubmit="return validate();" action="doAddPatient.jsp" method="post">
