@@ -112,3 +112,4 @@ fabric.properties
 
 # os
 .DS_Store
+.idea/checkstyle-idea.xml

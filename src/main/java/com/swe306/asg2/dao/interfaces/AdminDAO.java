@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public interface AdminDAO {
-    ResultSet insert(String username, String password) throws SQLException;
 
     
 }
